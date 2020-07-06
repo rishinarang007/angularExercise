@@ -1,0 +1,33 @@
+<div *ngIf="results">
+  <div *ngIf="!results">
+    No results found
+  </div>
+
+  <div *ngIf="results">
+    <h1>Weather of {{capital}}</h1>
+
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+          <div class="content">
+            <div class="caption">
+              <h3>
+                Temprature in: {{results.main.temp | convertTemp: param}} <a (click)="param = 'f'"> F </a> | <a (click)="param = 'c'">C</a>
+              </h3>
+              <br>
+              <p>
+                Humidity: {{results.main.humidity}} %
+              </p>
+               <p>
+                Wind Speed: {{results.wind.speed | convertMilesToKM: param}}<a (click)="param = 'm'"> Miles/hr </a> | <a (click)="param = 'k'">KM/hr</a>
+              </p>
+              <p>
+                Wid Deg: {{results.wind.deg}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
