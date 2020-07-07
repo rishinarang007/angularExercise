@@ -9,13 +9,13 @@ export class TempConvert implements PipeTransform {
     console.log(value, unit);
     switch (unit) {
         case 'f':
-          return value;
+          return Math.round((value - 273.15) * 9 / 5 + 32);
           break;
         case 'c':
-          return Math.round((value - 32) * (5 / 9));
+          return Math.round(value - 273.15);
           break;
         default:
-         return value;
+         return Math.round((value - 273.15) * 9 / 5 + 32);
       }
   }
 }

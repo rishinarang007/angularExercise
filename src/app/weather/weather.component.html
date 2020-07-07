@@ -12,7 +12,7 @@
           <div class="content">
             <div class="caption">
               <h3>
-                Temprature in: {{results.main.temp | convertTemp: param}} <a (click)="param = 'f'"> F </a> | <a (click)="param = 'c'">C</a>
+                Temprature in: {{results.main.temp | convertTemp: tempParam}} <a (click)="tempParam = 'f'"> F </a> | <a (click)="tempParam = 'c'">C</a>
               </h3>
               <br>
               <p>
